@@ -17,7 +17,7 @@ app.use(asset)
 
 
 mongoose.connect(process.env.MONGODB_URI).then(result =>{
-    const server = http.createServer(app);
+    // const server = http.createServer(app);
     console.log('database connected')
-    server.listen(1234)
+    // server.listen(1234)
 }).catch(err => console.log(err))
