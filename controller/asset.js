@@ -46,7 +46,7 @@ exports.getAsset = (req,res,next) =>{
     
     console.log(category,subCategory)
     
-    Asset.find().then(result=>{
+    Asset.find().sort({createdAt:-1}).then(result=>{
         res.status(200).json({
             assets: result
         })
