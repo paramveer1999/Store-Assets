@@ -9,7 +9,9 @@ exports.addAsset = (req,res,next) =>{
     const title = req?.body?.title;
     const subCategory = req?.body?.subCategory;
     const frameWork = req?.body?.frameWork;
+    const shortURL = req?.body?.shortURL;
     const errors = validationResult(req);
+    
 
     if(!errors.isEmpty()) {
         const error = new Error('Invalid data');
@@ -25,7 +27,8 @@ exports.addAsset = (req,res,next) =>{
         link: link,
         frameWork: frameWork,
         category: category,
-        subCategory: subCategory
+        subCategory: subCategory,
+        shortURL: shortURL
     });
 
     newAsset.save().then(result =>{
