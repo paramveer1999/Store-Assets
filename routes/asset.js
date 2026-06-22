@@ -12,4 +12,13 @@ router.post('/add-asset',[
 ],assetController.addAsset);
 
 router.get('/asset',assetController.getAsset)
+
+router.put('/update-post/:id',
+    [
+        body('title').trim().isLength({min:5}),
+        body('link').trim().not().isEmpty()
+    ],
+    assetController.updatePost);
+
+router.delete('/delete/:id',assetController.delete); 
 module.exports  = router; 
