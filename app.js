@@ -14,7 +14,11 @@ app.use((req,res,next)=>{
 })
 app.use(bodyParser.json())
 app.use(asset)
-
+app.use((err,req,res,next)=>{
+    console.log('17')
+    console.log(err)
+     res.status(500).json({message:err.message || "Internal server error"});
+})
 
 mongoose.connect(process.env.MONGODB_URI).then(result =>{
     const server = http.createServer(app);
