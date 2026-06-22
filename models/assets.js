@@ -17,6 +17,9 @@ const assetSchema = new Schema({
         type: String,
         required: true
     },
+    shortURL:{
+        type: String;
+    },
     frameWork : [{
         type: String,
     }]
